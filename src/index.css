@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+/* Custom colors for the website (for dark mode) */
+@theme{
+  --color-background: #0f1d1f ;
+  --color-background-gradient: #e4f0f7;
+ 
+  --color-foreground: #f0f2f5;  
+
+  --color-card: #344538;
+  
+  
+  --color-primary: #0b8563;
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #1f2830;
+  --color-secondary-foreground: #20b2a6;
+
+  --color-muted: #252e37;
+  --color-muted-foreground: #7a8491;
+  --color-muted-foreground2: #e6e3e3;
+
+  --color-border: #24322c;  
+
+  --radius: 0.75rem;
+
+  --color-highlight: #f5a623;
+  --color-surface: #1e1e1e;
+}
+
+/* for light mode */
+.light{
+  --color-background: #f7fafc;                 
+  --color-background-gradient: #dbeafe;        
+
+  --color-foreground: #0f172a;                
+
+  --color-card: #ffffff;                       
+
+  --color-primary: #0b8563;                    
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #e6edf3;                 
+  --color-secondary-foreground: #0b8563;       
+
+  --color-muted: #f1f5f9;                      
+  --color-muted-foreground: #475569;           
+  --color-muted-foreground2: #1e293b;          
+
+  --color-border: #d1d5db;                     
+
+  --color-highlight: #f59e0b;                  
+  --color-surface: #ecfdf5;                   
+}
+
+.light .glass {
+  background-color: color-mix(in srgb, white 70%, var(--color-primary) 15%);
+  
+}
+
+.light .glass-strong {
+  background-color: color-mix(in srgb, white 70%, var(--color-primary) 15%);
+}
+
+/* Set the default elements of the website */
+@layer base{
+  html{
+    scroll-behavior: smooth;
+  }
+
+  body{
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: "Inter",sans-serif;
+  }
+
+  .font-serif{
+    font-family: "Playfair Display", serif;
+  }
+}
+
+/* Set the default elements for components */
+
+@layer components{
+  /* for desktop navbar */
+  .glass{
+    background-color: color-mix(in srgb, var(--color-primary) 15%, transparent);
+    backdrop-filter: blur(16px);
+    border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
+  }
+
+  /* for mobile navbar */
+  .glass-strong{
+  background-color: color-mix(in srgb, var(--color-primary) 30%, transparent);
+  backdrop-filter: blur(24px);
+  border: 1px solid color-mix(in srgb, var(--color-border) 60%, transparent);
+  }
+
+  /* modal glass */
+  .modal{
+    background-color: color-mix(in srgb, var(--color-primary) 20%, transparent);
+    backdrop-filter: blur(100px);
+    border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
+  }
+
+  /* glow text effect */
+  .glow-text{
+    text-shadow: 0 0 30px color-mix(in srgb, var(--color-primary) 100%, transparent);
+  }
+}
+
+/* this is used for ulities in the website like animations */
+@layer utilities{
+  @keyframes fade-in{
+    from{
+      opacity: 0;
+      transform: translateY(0);
+    }
+    to{
+      opacity: 1;
+      transform: translateY(10px);
+    }
+  }
+  /* animation for mobile nav */
+    .animation-fade-in-mobile{
+    animation: fade-in 0.3s ease-out both;
+  }
+
+  .animation-fade-in{
+    animation: fade-in 0.7s ease-out both;
+  }
+
+  .animation-float{
+    animation: float 4s ease-in-out infinite;
+  }
+
+  /* floating animation */
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* skills animation */
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100%{
+      transform: translateX(-50%);
+    }
+  }
+
+  .animation-marquee{
+    animation: marquee 70s  linear infinite;
+    width: max-content;
+  }
+
+  /* animation fade delays */
+
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+    .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+    .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+    .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+    .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+    .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+    .animation-delay-700 {
+    animation-delay: 700ms;
+  }
+    .animation-delay-800 {
+    animation-delay: 800ms;
+  }
+
+}
+
+
+
