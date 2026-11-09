@@ -66,7 +66,7 @@ export const Home = () => {
                     <div className="flex flex-wrap gap-4 animation-fade-in animation-delay-600">
 
                         <button 
-                            onClick={() => window.open("/resume/Mark_Joddy_Apostol_Resume.pdf", "_blank")}
+                            onClick={() => window.open("/resume/Mark Joddy Apostol - Resume.pdf", "_blank")}
                             className="relative bg-transparent border border-border
                                         text-foreground hover:border-primary transition-all
                                         duration-1000 focus:outline-none focus-visible:ring-
@@ -101,8 +101,8 @@ export const Home = () => {
                     <div className="flex items-center gap-3 animation-fade-in animation-delay-800">
                         <span className="text-sm text-muted-foreground">Follow me: </span>
                         {[
-                            { icon: Github, href: "#" },
-                            { icon: Linkedin, href: "#" },
+                            { icon: Github, href: "https://github.com/mjapostol27" },
+                            { icon: Linkedin, href: "https://www.linkedin.com/in/mark-joddy-apostol-02b158221/" },
                         ].map((social, idx) => (
                             <a key={idx} href={social.href} className="p-2 rounded-full glass hover: bg-primary/10 hover:text-primary transition-all duration-300">
                                 <social.icon  className="w-5 h-5"/>
